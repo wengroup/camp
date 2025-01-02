@@ -1,0 +1,75 @@
+[build-system]
+requires = ["setuptools >= 42", "versioningit >= 2", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "camp"
+requires-python = ">=3.10"
+dynamic = ["version"]
+dependencies = [
+    "torch",
+    "lightning",
+    "torchmetrics",
+    "pymatgen",
+    "ase",
+    "pandas",
+    "scikit-learn",
+    "pydantic>=2.0.0",
+    "pydantic-settings",
+    "opt_einsum",
+    "torch_geometric",
+    "ema-pytorch",
+    "wandb",
+]
+
+[project.optional-dependencies]
+strict = [
+    "torch",
+    "lightning==2.2.4",
+    "torchmetrics==1.4.0",
+    "pymatgen==2024.5.1",
+    "ase==3.22.1",
+    "pandas==2.2.2",
+    "scikit-learn==1.4.2",
+    "pydantic==2.7.1",
+    "pydantic-settings==2.2.1",
+    "opt_einsum==3.3.0",
+    "torch_geometric==2.5.3",
+    "ema-pytorch==0.4.7",
+    "wandb==0.16.6",
+]
+
+test = [
+    "pytest",
+]
+dev = ["pre-commit>=2.19.0"]
+
+[tool.versioningit.vcs]
+method = "git"
+default-tag = "0.0.1"
+
+[tool.ruff]
+src = ["src", "tests"]
+select = [
+    "E",   # pycodestyle
+    "F",   # pyflakes
+    "I"    # isort
+]
+fixable = ['I']
+ignore = ["E501"]
+
+[tool.ruff.per-file-ignores]
+"__init__.py" = ["F401"]
+
+# This duplicates the functionlity of ruff but it is nicer to have it for pycharm usage:
+# ruff will move cursor to the bottom, while isort will not.
+# Add src_paths so that import of current package will be placed at the bottom.
+[tool.isort]
+src_paths = ["src", "tests"]
+
+[tool.black]
+line-length = 88
+
+[tool.mypy]
+ignore_missing_imports = true
+no_strict_optional = true

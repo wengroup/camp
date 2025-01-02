@@ -1,0 +1,22 @@
+seed_everything: 35
+#restore_checkpoint: null # path to checkpoint to restore from; if `null`, train from scratch
+restore_checkpoint: /Users/mjwen.admin/Packages/camp_analysis/tests/3bpa_error_at_high_T/240516_3bpa/checkpoint.ckpt
+
+data:
+  atomic_number: [1, 6, 7, 8]
+  trainset_filename: /Users/mjwen.admin/Packages/camp_analysis/dataset/3BPA/json_data/val_300K.json
+  valset_filename: /Users/mjwen.admin/Packages/camp_analysis/dataset/3BPA/json_data/val_300K.json
+  testset_filename: /Users/mjwen.admin/Packages/camp_analysis/dataset/3BPA/json_data/val_300K.json
+  r_cut: 5.0     # this should not be provided, will read from training config
+  train_batch_size: 4
+  val_batch_size: 20
+  test_batch_size: 20
+
+trainer:
+  accelerator: cpu
+  gradient_clip_val: 100.0
+
+  logger:
+    class_path: lightning.pytorch.loggers.wandb.WandbLogger
+    init_args:
+      project: camp_proj
