@@ -2,7 +2,7 @@
 
 CAMP (Cartesian Atomistic Moment Potentials) for materials and molecular systems.
 
-## Install
+## Installation
 
 Follow the official documentation to install [pytorch>=2.0.0](https://pytorch.org/get-started/locally/).
 
