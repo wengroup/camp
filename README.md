@@ -33,11 +33,13 @@ Pretrained models for LiPS, md17, bulk water, and bilayer graphene are available
 Wen, M., Huang, W. F., Dai, J., & Adhikari, S. (2024). Cartesian Atomic Moment Machine Learning Interatomic Potentials. arXiv preprint arXiv:2411.12096.
 
 ```latex
-@article{wen2024cartesian,
-  title   = {Cartesian Atomic Moment Machine Learning Interatomic Potentials},
-  author  = {Wen, Mingjian and Huang, Wei-Fan and Dai, Jin and Adhikari, Santosh},
-  journal = {arXiv preprint arXiv:2411.12096},
-  doi     = {10.48550/ARXIV.2411.12096},
-  year    = {2024}
+@article{wen2025cartesian,
+	author  = {Wen, Mingjian and Huang, Wei-Fan and Dai, Jin and Adhikari, Santosh},
+	title   = {Cartesian atomic moment machine learning interatomic potentials},
+	journal = {npj Computational Materials},
+	volume  = {11},
+	number  = {128},
+	year    = {2025},
+	doi     = {10.1038/s41524-025-01623-4}
 }
 ```
